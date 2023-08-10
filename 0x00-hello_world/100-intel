@@ -1,22 +1,2 @@
-#!/bin/bash
-# Check if the C file name is provided
-if [ -z "$CFILE" ]; then
-echo "Please provide the C file name in the variable CFILE"
-exit 1
-fi
-# Check if the C file exists
-if [ ! -f "$CFILE" ]; then
-echo "The file $CFILE does not exist"
-exit 2
-fi
-# Get the output file name by replacing the .c extension with .s
-OFILE="${CFILE%.c}.s"
-# Use gcc with -S and -masm=intel options to generate the assembly code in Intel syntax
-gcc -S -masm=intel "$CFILE" -o "$OFILE"
-# Check if the output file is created
-if [ -f "$OFILE" ]; then
-echo "The assembly code is saved in $OFILE"
-else
-echo "There was an error generating the assembly code"
-exit 3
-fi
+#!/bin/bash 
+[ -z "$CFILE" ] && echo "Please provide the C file name in the variable CFILE" && exit 1 OFILE="${CFILE%.c}.s" gcc -S -masm=intel "$CFILE" -o "$OFILE" || echo "There was an error generating the assembly code" && exit 2 -f "$OFILE" ] && echo "The assembly code is saved in $OFILE"
