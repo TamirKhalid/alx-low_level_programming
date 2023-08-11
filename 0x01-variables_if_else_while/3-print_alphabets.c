@@ -11,8 +11,8 @@ char c;
 c = 'a';
 while (c <= 'z')
 {
-putchar(c); // print the current letter
-c++; // increment c to the next letter
+putchar(c);
+c++;
 }
-c = 'A'; // initialize c with the first letter of the uppercase alphabet
+c = 'A';
 while (c <= 'Z')
