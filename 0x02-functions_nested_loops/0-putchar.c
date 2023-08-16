@@ -1,15 +1,12 @@
-#include "main.h"
+#include <stdio.h>
 
 int main(void)
 {
-_putchar('_');
-_putchar('p');
-_putchar('u');
-_putchar('t');
-_putchar('c');
-_putchar('h');
-_putchar('a');
-_putchar('r');
-_putchar('\n');
+char *str = "_putchar";
+for (int i = 0; str[i] != '\0'; i++)
+{
+putchar(str[i]);
+}
+putchar('\n');
 return (0);
 }
